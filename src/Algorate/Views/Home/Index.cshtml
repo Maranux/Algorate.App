@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["UserName"] = User.Identity.Name;
+}
+
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+    <dt>@User.Claims</dt>
+</dl>
